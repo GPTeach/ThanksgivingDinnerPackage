@@ -1,66 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Frazier Thanksgiving Dinner Access System</title>
+    <title>Frazier Thanksgiving Selective Access System</title>
     <style>
-        body { font-family: 'Comic Sans MS', cursive, sans-serif; background-color: #fff8dc; }
+        body { font-family: 'Arial', sans-serif; background-color: #f3f3f3; }
         .container { width: 80%; margin: auto; text-align: center; padding: 20px; }
-        .dinner-option, .addon-option { margin: 15px; font-size: 18px; }
-        .addon-option { font-style: italic; color: #808080; }
-        button { padding: 10px 20px; background-color: #ff4500; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
-        button:hover { background-color: #ff6347; }
-        h1 { color: #8b0000; }
+        .food-item { margin: 20px; font-size: 18px; }
+        .access-option { font-style: italic; color: #555; margin-left: 20px; }
+        button { padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+        h1 { color: #333; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to the Frazier Thanksgiving Dinner Access System</h1>
-        <p>Select your Thanksgiving dinner options along with any extravagant addons:</p>
-        <!-- Standard Options -->
-        <div class="dinner-option">
-            <input type="checkbox" id="turkey" name="Turkey">
-            <label for="turkey">Turkey</label>
-        </div>
-        <div class="dinner-option">
-            <input type="checkbox" id="mashedPotatoes" name="Mashed Potatoes">
-            <label for="mashedPotatoes">Mashed Potatoes</label>
-        </div>
-        <div class="dinner-option">
-            <input type="checkbox" id="gravy" name="Gravy">
-            <label for="gravy">Gravy</label>
-        </div>
-        <!-- Addons -->
-        <div class="addon-option">
-            <input type="checkbox" id="earlyAccessSweetPotatoes" name="Early Access to Sweet Potatoes">
-            <label for="earlyAccessSweetPotatoes">Early Access to Sweet Potatoes</label>
-        </div>
-        <div class="addon-option">
-            <input type="checkbox" id="unlimitedCranberry" name="Unlimited Cranberry Sauce Pass">
-            <label for="unlimitedCranberry">Unlimited Cranberry Sauce Pass</label>
-        </div>
-        <div class="addon-option">
-            <input type="checkbox" id="premiumStuffing" name="Premium Stuffing Package">
-            <label for="premiumStuffing">Premium Stuffing Package</label>
-        </div>
-        <div class="addon-option">
-            <input type="checkbox" id="turkeyToken" name="Turkey Token - Redeem for Extra Turkey">
-            <label for="turkeyToken">Turkey Token - Redeem for Extra Turkey</label>
-        </div>
-        <!-- Add more funny options here -->
-        <button onclick="confirmSelection()">Confirm My Absurd Feast</button>
+        <h1>Frazier Thanksgiving Selective Access System</h1>
+        <p>Strategically select your access options for each dish (limited to two Fast Passes per guest):</p>
+        <!-- Food Items with Multiple Options -->
+        <!-- Turkey -->
+        <!-- Mashed Potatoes -->
+        <!-- Gravy -->
+        <!-- Rolls -->
+        <!-- Cranberry Sauce -->
+        <!-- Stuffing -->
+        <!-- Pumpkin Pie -->
+        <!-- Ice Cream -->
+        <!-- Add more dishes and options here -->
+        <button onclick="confirmSelection()">Confirm My Selections</button>
         <p id="selectionResult"></p>
     </div>
 
     <script>
         function confirmSelection() {
             var selectedItems = [];
+            var fastPassCount = 0;
             var checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
+
             for (var checkbox of checkboxes) {
+                if (checkbox.name.includes("Fast Pass")) {
+                    fastPassCount++;
+                }
+                if (fastPassCount > 2) {
+                    document.getElementById("selectionResult").innerText = "Selection Error: You cannot have more than two Fast Passes.";
+                    return;
+                }
                 selectedItems.push(checkbox.name);
             }
-            document.getElementById("selectionResult").innerText = "Feast Activation Complete! You have selected: " + selectedItems.join(", ") + ". Please wait for your Thanksgiving meal to be digitally prepared!";
+            document.getElementById("selectionResult").innerText = "Your selections are confirmed. Show this to the Feast Coordinator.";
         }
     </script>
 </body>
 </html>
-
