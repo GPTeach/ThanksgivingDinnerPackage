@@ -15,38 +15,81 @@
 <body>
     <div class="container">
         <h1>Frazier Thanksgiving Selective Access System</h1>
-        <p>Strategically select your access options for each dish (limited to two Fast Passes per guest):</p>
-        
-        <!-- Turkey Options -->
+        <p>Please select your access options for each dish (limited to two Fast Passes per guest):</p>
+    
         <div class="food-item">
             <strong>Turkey</strong>
-            <div class="access-option">
-                <input type="checkbox" id="turkeyEarlyAccess" name="Turkey Early Access">
-                <label for="turkeyEarlyAccess">Early Access</label>
-            </div>
             <div class="access-option">
                 <input type="checkbox" id="turkeyFastPass" name="Turkey Fast Pass">
                 <label for="turkeyFastPass">Fast Pass</label>
             </div>
-            <!-- Add more turkey options here -->
+             <div class="access-option">
+                <input type="checkbox" id="turkeyUnlimited" name="Unlimited Turkey">
+                <label for="turkeyUnlimited">Unlimited Access</label>
+             </div>
         </div>
 
-        <!-- Mashed Potatoes Options -->
         <div class="food-item">
             <strong>Mashed Potatoes</strong>
+            <div class="access-option">
+                <input type="checkbox" id="potatoesFastPass" name="Mashed Potatoes Fast Pass">
+                <label for="potatoesFastPass">Fast Pass</label>
+            </div>
             <div class="access-option">
                 <input type="checkbox" id="potatoesUnlimited" name="Unlimited Mashed Potatoes">
                 <label for="potatoesUnlimited">Unlimited Access</label>
             </div>
-            <div class="access-option">
-                <input type="checkbox" id="potatoesVIP" name="Mashed Potatoes VIP Package">
-                <label for="potatoesVIP">VIP Package</label>
-            </div>
-            <!-- Add more mashed potatoes options here -->
         </div>
 
         <!-- Add options for Gravy, Rolls, Cranberry Sauce, Stuffing, Pumpkin Pie, Ice Cream -->
-
+        <div class="food-item">
+            <strong>Gravy</strong>
+            <div class="access-option">
+                <input type="checkbox" id="gravyFastPass" name="Gravy Fast Pass">
+                <label for="gravyFastPass">Fast Pass</label>
+            </div>
+             <div class="access-option">
+                <input type="checkbox" id="gravyUnlimited" name="Unlimited Gravy">
+                <label for="gravyUnlimited">Unlimited Access</label>
+            </div>
+        </div>
+         <div class="food-item">
+            <strong>Stuffing</strong>
+            <div class="access-option">
+                <input type="checkbox" id="stuffingFastPass" name="Stuffing Fast Pass">
+                <label for="stuffingFastPass">Fast Pass</label>
+            </div>
+             <div class="access-option">
+                <input type="checkbox" id="stuffingUnlimited" name="Unlimited Stuffing">
+                <label for="stuffingUnlimited">Unlimited Access</label>
+            </div>
+        </div>
+         <div class="food-item">
+            <strong>Cranberry Sauce</strong>
+            <div class="access-option">
+                <input type="checkbox" id="cranberryFastPass" name="Cranberry Fast Pass">
+                <label for="cranberryFastPass">Fast Pass</label>
+            </div>
+             <div class="access-option">
+                <input type="checkbox" id="cranberryUnlimited" name="Unlimited Cranberry Sauce">
+                <label for="cranberryUnlimited">Unlimited Access</label>
+            </div>
+        </div>
+         <div class="food-item">
+            <strong>Rolls</strong>
+            <div class="access-option">
+                <input type="checkbox" id="rollsFastPass" name="Rolls Fast Pass">
+                <label for="rollsFastPass">Fast Pass</label>
+            </div>
+             <div class="access-option">
+                <input type="checkbox" id="rollsUnlimited" name="Unlimited Rolls">
+                <label for="rollsUnlimited">Unlimited Access</label>
+            </div>
+             <div class="access-option">
+                <input type="checkbox" id="rollsVIP" name="Rolls VIP Package">
+                <label for="rollsVIP">VIP Package</label>
+            </div>
+        </div>
         <button onclick="confirmSelection()">Confirm My Selections</button>
         <p id="selectionResult"></p>
     </div>
