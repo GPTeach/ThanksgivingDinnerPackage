@@ -191,8 +191,13 @@
 </div>
         <button onclick="confirmSelection()">Confirm My Selections</button>
         <p id="selectionResult"></p>
+   
+     <img src="turkeyegg.png" alt="Hidden Turkey Egg" id="hidden-turkey-egg" style="width: 50px; opacity: 0.05; cursor: pointer;" onclick="showEasterEgg()">
     </div>
 
+
+
+     
     <script>
        function confirmSelection() {
     var selectedItems = [];
@@ -225,7 +230,9 @@
     }
 }
 
-
+function showEasterEgg() {
+        alert("You found a turkey egg. First person to call Grandpa a 'knucklehead' gets an extra slice of pumpkin pie.");
+    }
 
     </script>
 </body>
