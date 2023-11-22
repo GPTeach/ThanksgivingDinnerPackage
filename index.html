@@ -1,32 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Thanksgiving Dinner Selection</title>
+    <title>Frazier Thanksgiving Dinner Access System</title>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #f7f7f7; }
+        body { font-family: 'Comic Sans MS', cursive, sans-serif; background-color: #fff8dc; }
         .container { width: 80%; margin: auto; text-align: center; padding: 20px; }
-        .dinner-option { margin: 15px; }
-        button { padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; }
-        button:hover { background-color: #45a049; }
+        .dinner-option, .addon-option { margin: 15px; font-size: 18px; }
+        .addon-option { font-style: italic; color: #808080; }
+        button { padding: 10px 20px; background-color: #ff4500; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        button:hover { background-color: #ff6347; }
+        h1 { color: #8b0000; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Select Your Thanksgiving Dinner Package</h1>
+        <h1>Welcome to the Frazier Thanksgiving Dinner Access System</h1>
+        <p>Select your Thanksgiving dinner options along with any extravagant addons:</p>
+        <!-- Standard Options -->
         <div class="dinner-option">
-            <input type="checkbox" id="turkey" name="turkey">
+            <input type="checkbox" id="turkey" name="Turkey">
             <label for="turkey">Turkey</label>
         </div>
         <div class="dinner-option">
-            <input type="checkbox" id="mashedPotatoes" name="mashedPotatoes">
+            <input type="checkbox" id="mashedPotatoes" name="Mashed Potatoes">
             <label for="mashedPotatoes">Mashed Potatoes</label>
         </div>
         <div class="dinner-option">
-            <input type="checkbox" id="gravy" name="gravy">
+            <input type="checkbox" id="gravy" name="Gravy">
             <label for="gravy">Gravy</label>
         </div>
-        <!-- Add more options as needed -->
-        <button onclick="confirmSelection()">Confirm Selection</button>
+        <!-- Addons -->
+        <div class="addon-option">
+            <input type="checkbox" id="earlyAccessSweetPotatoes" name="Early Access to Sweet Potatoes">
+            <label for="earlyAccessSweetPotatoes">Early Access to Sweet Potatoes</label>
+        </div>
+        <div class="addon-option">
+            <input type="checkbox" id="unlimitedCranberry" name="Unlimited Cranberry Sauce Pass">
+            <label for="unlimitedCranberry">Unlimited Cranberry Sauce Pass</label>
+        </div>
+        <div class="addon-option">
+            <input type="checkbox" id="premiumStuffing" name="Premium Stuffing Package">
+            <label for="premiumStuffing">Premium Stuffing Package</label>
+        </div>
+        <div class="addon-option">
+            <input type="checkbox" id="turkeyToken" name="Turkey Token - Redeem for Extra Turkey">
+            <label for="turkeyToken">Turkey Token - Redeem for Extra Turkey</label>
+        </div>
+        <!-- Add more funny options here -->
+        <button onclick="confirmSelection()">Confirm My Absurd Feast</button>
         <p id="selectionResult"></p>
     </div>
 
@@ -37,8 +58,9 @@
             for (var checkbox of checkboxes) {
                 selectedItems.push(checkbox.name);
             }
-            document.getElementById("selectionResult").innerText = "You have selected: " + selectedItems.join(", ");
+            document.getElementById("selectionResult").innerText = "Feast Activation Complete! You have selected: " + selectedItems.join(", ") + ". Please wait for your Thanksgiving meal to be digitally prepared!";
         }
     </script>
 </body>
 </html>
+
