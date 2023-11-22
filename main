@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thanksgiving Dinner Selection</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f7f7f7; }
+        .container { width: 80%; margin: auto; text-align: center; padding: 20px; }
+        .dinner-option { margin: 15px; }
+        button { padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background-color: #45a049; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select Your Thanksgiving Dinner Package</h1>
+        <div class="dinner-option">
+            <input type="checkbox" id="turkey" name="turkey">
+            <label for="turkey">Turkey</label>
+        </div>
+        <div class="dinner-option">
+            <input type="checkbox" id="mashedPotatoes" name="mashedPotatoes">
+            <label for="mashedPotatoes">Mashed Potatoes</label>
+        </div>
+        <div class="dinner-option">
+            <input type="checkbox" id="gravy" name="gravy">
+            <label for="gravy">Gravy</label>
+        </div>
+        <!-- Add more options as needed -->
+        <button onclick="confirmSelection()">Confirm Selection</button>
+        <p id="selectionResult"></p>
+    </div>
+
+    <script>
+        function confirmSelection() {
+            var selectedItems = [];
+            var checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
+            for (var checkbox of checkboxes) {
+                selectedItems.push(checkbox.name);
+            }
+            document.getElementById("selectionResult").innerText = "You have selected: " + selectedItems.join(", ");
+        }
+    </script>
+</body>
+</html>
