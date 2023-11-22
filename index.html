@@ -14,7 +14,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Frazier Thanksgiving Selective Access System</h1>
+        <h1>Frazier Thanksgiving VIP Selective Access System</h1>
         <p>Please select up to two VIP access options for each dish (limited to one Fast Pass and one Unlimited Access per guest):</p>
     
         <div class="food-item">
@@ -110,7 +110,7 @@
             unlimitedAccessCount++;
         }
         if (fastPassCount > 1 || unlimitedAccessCount > 1) {
-            document.getElementById("selectionResult").innerHTML = "Selection Error: You cannot have more than one Fast Pass and one Unlimited Access.";
+            document.getElementById("selectionResult").innerHTML = "Selection Error: You cannot have more than one Fast Pass and one Unlimited Access. This is Thanksgiving, you jerk. Don't be selfish.";
             return;
         }
         selectedItems.push(checkbox.name);
@@ -119,10 +119,10 @@
     }
 
     if (selectedItems.length > 0) {
-        var confirmationMessage = "Your selections are confirmed. Please show this list to the Feast Coordinator:<br>" + selectedItems.join(", ") + "<br><br>" + selectedImages.join(" ");
+        var confirmationMessage = "Your selections are confirmed. Please show your VIP access tokens to the Feast Coordinator:<br>" + selectedItems.join(", ") + "<br><br>" + selectedImages.join(" ");
         document.getElementById("selectionResult").innerHTML = confirmationMessage;
     } else {
-        document.getElementById("selectionResult").innerHTML = "No selections made. Please choose your options.";
+        document.getElementById("selectionResult").innerHTML = "No selections made. Have more respect for yourself. You deserve this. Please choose your options.";
     }
 }
 
