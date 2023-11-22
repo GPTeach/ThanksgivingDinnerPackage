@@ -15,7 +15,7 @@
 <body>
     <div class="container">
         <h1>Frazier Thanksgiving Selective Access System</h1>
-        <p>Please select your access options for each dish (limited to two Fast Passes per guest):</p>
+        <p>Please select your access options for each dish (limited to one Fast Pass and one Unlimited Access per guest):</p>
     
         <div class="food-item">
             <strong>Turkey</strong>
@@ -95,29 +95,37 @@
     </div>
 
     <script>
-        function confirmSelection() {
+       function confirmSelection() {
     var selectedItems = [];
+    var selectedImages = [];
     var fastPassCount = 0;
+    var unlimitedAccessCount = 0;
     var checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
 
     for (var checkbox of checkboxes) {
         if (checkbox.name.includes("Fast Pass")) {
             fastPassCount++;
         }
-        if (fastPassCount > 2) {
-            document.getElementById("selectionResult").innerText = "Selection Error: You cannot have more than two Fast Passes.";
+        if (checkbox.name.includes("Unlimited")) {
+            unlimitedAccessCount++;
+        }
+        if (fastPassCount > 1 || unlimitedAccessCount > 1) {
+            document.getElementById("selectionResult").innerHTML = "Selection Error: You cannot have more than one Fast Pass and one Unlimited Access.";
             return;
         }
         selectedItems.push(checkbox.name);
+        selectedImages.push("<img src='images/" + checkbox.id + ".png' alt='" + checkbox.name + "' style='max-width:100px; height:auto;'>");
     }
 
     if (selectedItems.length > 0) {
-        var confirmationMessage = "Your selections are confirmed. Please show this list to the Feast Coordinator:\n" + selectedItems.join(", ");
-        document.getElementById("selectionResult").innerText = confirmationMessage;
+        var confirmationMessage = "Your selections are confirmed. Please show this list to the Feast Coordinator:<br>" + selectedItems.join(", ") + "<br><br>" + selectedImages.join(" ");
+        document.getElementById("selectionResult").innerHTML = confirmationMessage;
     } else {
-        document.getElementById("selectionResult").innerText = "No selections made. Please choose your options.";
+        document.getElementById("selectionResult").innerHTML = "No selections made. Please choose your options.";
     }
 }
+
+
 
     </script>
 </body>
