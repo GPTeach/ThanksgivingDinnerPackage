@@ -25,15 +25,17 @@
             align-items: center;
             margin: 20px;
             font-size: 20px;
+            flex-wrap: wrap; 
         }
          .food-item img {
             margin-right: 10px;
-            max-width: 100px; /* Adjust size for desktop */
+            max-width: 80px; /* Adjust size for desktop */
             height: auto;
         }
 
          .food-details {
             text-align: left;
+            margin-top: 10px;
         }
         .access-option { 
             font-style: italic; 
@@ -86,7 +88,7 @@
 
         @media (max-width: 600px) {
             .food-item img {
-                max-width: 60px; /* Smaller size for mobile */
+                max-width: 50px; /* Smaller size for mobile */
             }
         }
     </style>
