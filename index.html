@@ -129,6 +129,121 @@
                 <label for="rollsUnlimited">Unlimited Access</label>
             </div>
              <div class="access-option">
+                <input type="checkbox" id="rollsPremium" name="Rolls Royce Premium Package">
+                <label for="rollsPremium">Rolls Royce Premium Package</label>
+            </div>
+        </div>
+        <button onclick="confirmSelection()">Confirm My Selections</button>
+        <p id="selectionResult"></p>
+    </div>
+
+    <script>
+       function confirmSelection() {
+    var selectedItems = [];
+    var selectedImages = [];
+    var fastPassCount = 0;
+    var unlimitedAccessCount = 0;
+    var checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
+
+    for (var checkbox of checkboxes) {
+        if (checkbox.name.includes("Fast Pass")) {
+            fastPassCount++;
+        }
+        if (checkbox.name.includes("Unlimited")) {
+            unlimitedAccessCount++;
+        }
+        if (fastPassCount > 1 || unlimitedAccessCount > 1) {
+            document.getElementById("selectionResult").innerHTML = "Selection Error: You cannot have more than one Fast Pass and one Unlimited Access. This is Thanksgiving, you jerk. Don't be selfish.";
+            return;
+        }
+        selectedItems.push(checkbox.name);
+        selectedImages.push("<img src='" + checkbox.id + ".png' alt='" + checkbox.name + "' style='max-width:200px; height:auto;'>");
+
+    }
+
+    if (selectedItems.length > 0) {
+        var confirmationMessage = "Your selections are confirmed. Please show your VIP access tokens to the Feast Coordinator:<br>" + selectedItems.join(", ") + "<br><br>" + selectedImages.join(" ");
+        document.getElementById("selectionResult").innerHTML = confirmationMessage;
+    } else {
+        document.getElementById("selectionResult").innerHTML = "No selections made. Have more respect for yourself. You deserve this. Please choose your options.";
+    }
+}
+
+
+
+    </script>
+</body>
+</html>
+    
+        <div class="food-item">
+            <strong>Turkey</strong>
+            <div class="access-option">
+                <input type="checkbox" id="turkeyFastPass" name="Turkey Fast Pass">
+                <label for="turkeyFastPass">Fast Pass</label>
+            </div>
+             <div class="access-option">
+                <input type="checkbox" id="turkeyUnlimited" name="Unlimited Turkey">
+                <label for="turkeyUnlimited">Unlimited Access</label>
+             </div>
+        </div>
+
+        <div class="food-item">
+            <strong>Mashed Potatoes</strong>
+            <div class="access-option">
+                <input type="checkbox" id="potatoesFastPass" name="Mashed Potatoes Fast Pass">
+                <label for="potatoesFastPass">Fast Pass</label>
+            </div>
+            <div class="access-option">
+                <input type="checkbox" id="potatoesUnlimited" name="Unlimited Mashed Potatoes">
+                <label for="potatoesUnlimited">Unlimited Access</label>
+            </div>
+        </div>
+
+        <!-- Add options for Gravy, Rolls, Cranberry Sauce, Stuffing, Pumpkin Pie, Ice Cream -->
+        <div class="food-item">
+            <strong>Gravy</strong>
+            <div class="access-option">
+                <input type="checkbox" id="gravyFastPass" name="Gravy Fast Pass">
+                <label for="gravyFastPass">Fast Pass</label>
+            </div>
+             <div class="access-option">
+                <input type="checkbox" id="gravyUnlimited" name="Unlimited Gravy">
+                <label for="gravyUnlimited">Unlimited Access</label>
+            </div>
+        </div>
+         <div class="food-item">
+            <strong>Stuffing</strong>
+            <div class="access-option">
+                <input type="checkbox" id="stuffingFastPass" name="Stuffing Fast Pass">
+                <label for="stuffingFastPass">Fast Pass</label>
+            </div>
+             <div class="access-option">
+                <input type="checkbox" id="stuffingUnlimited" name="Unlimited Stuffing">
+                <label for="stuffingUnlimited">Unlimited Access</label>
+            </div>
+        </div>
+         <div class="food-item">
+            <strong>Cranberry Sauce</strong>
+            <div class="access-option">
+                <input type="checkbox" id="cranberryFastPass" name="Cranberry Fast Pass">
+                <label for="cranberryFastPass">Fast Pass</label>
+            </div>
+             <div class="access-option">
+                <input type="checkbox" id="cranberryUnlimited" name="Unlimited Cranberry Sauce">
+                <label for="cranberryUnlimited">Unlimited Access</label>
+            </div>
+        </div>
+         <div class="food-item">
+            <strong>Rolls</strong>
+            <div class="access-option">
+                <input type="checkbox" id="rollsFastPass" name="Rolls Fast Pass">
+                <label for="rollsFastPass">Fast Pass</label>
+            </div>
+             <div class="access-option">
+                <input type="checkbox" id="rollsUnlimited" name="Unlimited Rolls">
+                <label for="rollsUnlimited">Unlimited Access</label>
+            </div>
+             <div class="access-option">
                 <input type="checkbox" id="rollsVIP" name="Rolls Royce Premium Package">
                 <label for="rollsVIP">Rolls Royce Premium Package</label>
             </div>
