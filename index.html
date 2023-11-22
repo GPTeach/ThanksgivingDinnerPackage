@@ -16,16 +16,37 @@
     <div class="container">
         <h1>Frazier Thanksgiving Selective Access System</h1>
         <p>Strategically select your access options for each dish (limited to two Fast Passes per guest):</p>
-        <!-- Food Items with Multiple Options -->
-        <!-- Turkey -->
-        <!-- Mashed Potatoes -->
-        <!-- Gravy -->
-        <!-- Rolls -->
-        <!-- Cranberry Sauce -->
-        <!-- Stuffing -->
-        <!-- Pumpkin Pie -->
-        <!-- Ice Cream -->
-        <!-- Add more dishes and options here -->
+        
+        <!-- Turkey Options -->
+        <div class="food-item">
+            <strong>Turkey</strong>
+            <div class="access-option">
+                <input type="checkbox" id="turkeyEarlyAccess" name="Turkey Early Access">
+                <label for="turkeyEarlyAccess">Early Access</label>
+            </div>
+            <div class="access-option">
+                <input type="checkbox" id="turkeyFastPass" name="Turkey Fast Pass">
+                <label for="turkeyFastPass">Fast Pass</label>
+            </div>
+            <!-- Add more turkey options here -->
+        </div>
+
+        <!-- Mashed Potatoes Options -->
+        <div class="food-item">
+            <strong>Mashed Potatoes</strong>
+            <div class="access-option">
+                <input type="checkbox" id="potatoesUnlimited" name="Unlimited Mashed Potatoes">
+                <label for="potatoesUnlimited">Unlimited Access</label>
+            </div>
+            <div class="access-option">
+                <input type="checkbox" id="potatoesVIP" name="Mashed Potatoes VIP Package">
+                <label for="potatoesVIP">VIP Package</label>
+            </div>
+            <!-- Add more mashed potatoes options here -->
+        </div>
+
+        <!-- Add options for Gravy, Rolls, Cranberry Sauce, Stuffing, Pumpkin Pie, Ice Cream -->
+
         <button onclick="confirmSelection()">Confirm My Selections</button>
         <p id="selectionResult"></p>
     </div>
