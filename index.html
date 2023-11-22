@@ -96,22 +96,29 @@
 
     <script>
         function confirmSelection() {
-            var selectedItems = [];
-            var fastPassCount = 0;
-            var checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
+    var selectedItems = [];
+    var fastPassCount = 0;
+    var checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
 
-            for (var checkbox of checkboxes) {
-                if (checkbox.name.includes("Fast Pass")) {
-                    fastPassCount++;
-                }
-                if (fastPassCount > 2) {
-                    document.getElementById("selectionResult").innerText = "Selection Error: You cannot have more than two Fast Passes.";
-                    return;
-                }
-                selectedItems.push(checkbox.name);
-            }
-            document.getElementById("selectionResult").innerText = "Your selections are confirmed. Show this to the Feast Coordinator.";
+    for (var checkbox of checkboxes) {
+        if (checkbox.name.includes("Fast Pass")) {
+            fastPassCount++;
         }
+        if (fastPassCount > 2) {
+            document.getElementById("selectionResult").innerText = "Selection Error: You cannot have more than two Fast Passes.";
+            return;
+        }
+        selectedItems.push(checkbox.name);
+    }
+
+    if (selectedItems.length > 0) {
+        var confirmationMessage = "Your selections are confirmed. Please show this list to the Feast Coordinator:\n" + selectedItems.join(", ");
+        document.getElementById("selectionResult").innerText = confirmationMessage;
+    } else {
+        document.getElementById("selectionResult").innerText = "No selections made. Please choose your options.";
+    }
+}
+
     </script>
 </body>
 </html>
